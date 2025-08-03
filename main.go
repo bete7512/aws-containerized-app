@@ -29,6 +29,13 @@ func main() {
 		w.Write([]byte("Welcome to the Go HTTP server!"))
 	})
 
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("Received request for /health")
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(`{"status":"healthy"}`))
+	})
+
 	mux.HandleFunc("/hello", helloWorld)
 
 	go func() {

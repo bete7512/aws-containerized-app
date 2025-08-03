@@ -1,5 +1,11 @@
 {
   "family": "aws-containerized-app-task",
+    "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512",
   "containerDefinitions": [
     {
       "name": "aws-containerized-app",

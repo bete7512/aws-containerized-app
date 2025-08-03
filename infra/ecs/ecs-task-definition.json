@@ -7,6 +7,13 @@
   "networkMode": "awsvpc",
   "cpu": "256",
   "memory": "512",
+  "essential": true,
+  "portMappings": [
+    {
+      "containerPort": 80,
+      "protocol": "tcp"
+    }
+  ],
   "containerDefinitions": [
     {
       "name": "aws-containerized-app",

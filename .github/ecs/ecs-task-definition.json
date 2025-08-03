@@ -1,0 +1,12 @@
+{
+  "family": "",
+  "containerDefinitions": [
+    {
+      "name": "aws-containerized-app",
+      "image": "783141779211.dkr.ecr.eu-central-1.amazonaws.com/awscontainerizedapp:latest",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true
+    }
+  ]
+}

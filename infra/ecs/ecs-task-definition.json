@@ -1,5 +1,5 @@
 {
-  "family": "",
+  "family": "aws-containerized-app-task",
   "containerDefinitions": [
     {
       "name": "aws-containerized-app",

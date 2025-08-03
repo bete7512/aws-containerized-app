@@ -22,7 +22,15 @@ func main() {
 		Handler: mux,
 	}
 
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("Received request for /")
+		w.Header().Set("Content-Type", "text/plain")
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("Welcome to the Go HTTP server!"))
+	})
+
 	mux.HandleFunc("/hello", helloWorld)
+
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("ListenAndServe failed: %v", err)
